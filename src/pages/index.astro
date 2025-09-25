@@ -1,0 +1,129 @@
+---
+import Item from "../components/Item.astro";
+import ItemGroup from "../components/ItemGroup.astro";
+import "../styles/global.css";
+import "sal.js/dist/sal.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>Jacob Jackson</title>
+  </head>
+  <body>
+    <div class="w-full lg:mx-auto max-w-3xl lg:mt-32 prose mb-32">
+      <div class="flex gap-3 not-prose">
+        <img
+          src="/images/me.jpg"
+          alt="Me :)"
+          class="h-24 aspect-square rounded-md"
+        />
+        <div class="">
+          <h1 class="text-5xl font-medium flex mb-0">
+            Hi, I'm&nbsp;<span
+              class="decoration-wavy underline decoration-orange-500"
+              >Jacob Jackson</span
+            >
+          </h1>
+          <div class="flex items-center gap-2 mt-3">
+            <a
+              href="https://github.com/AsyncBanana"
+              class="text-gray-400 hover:text-gray-500 duration-100"
+              ><span class="i-cib-github w-6 h-6"></span></a
+            >
+            <a
+              href="https://www.linkedin.com/in/jacob-jackson-7b7985255/"
+              class="text-gray-400 hover:text-gray-500 duration-100"
+              ><span class="i-cib-linkedin w-6 h-6"></span></a
+            >
+            <a href=""></a>
+          </div>
+        </div>
+      </div>
+      <p>
+        I am a student, software developer, and data systems engineer. I have
+        experience tuning high performance databases, building apps with
+        hundreds of thousands of views, and running a <a
+          href="https://byteofdev.com"
+          >data systems & software development blog</a
+        > read by hundreds of thousands of engineers.
+      </p>
+      <h2 class="text-4xl">Experience</h2>
+      <ItemGroup>
+        <Item
+          title="Database Engineering Intern at Cyberspatial"
+          startTime={new Date("2025-09-01T04:00:00.000Z")}
+          >I help optimize data ingestion and querying for for high-throughput
+          satellite networking observability.
+        </Item>
+        <Item
+          title="Technical Writer at Argot"
+          startTime={new Date("2022-02-01T04:00:00.000Z")}
+          endTime={new Date("2025-01-01T04:00:00.000Z")}
+          >I ghostwrote opinion articles and guides for developer tooling
+          companies and publications including the Deno blog, the Neon blog, and
+          Torc.dev.
+        </Item>
+      </ItemGroup>
+      <h2 class="text-4xl">Projects</h2>
+      <ItemGroup>
+        <Item
+          title="SATQuestionBank.org"
+          href="https://satquestionbank.org"
+          startTime={new Date("2024-10-01T04:00:00.000Z")}
+          >I built a testprep platform in use by over {">"}30,000 students using
+          a Cloudflare Workers server backed by a Postgres database with
+          SolidStart and TailwindCSS/DaisyUI
+        </Item>
+        <Item
+          title="Microdiff"
+          href="https://github.com/AsyncBanana/microdiff"
+          startTime={new Date("2021-10-01T04:00:00.000Z")}
+        >
+          I built a diffing algorithm for JavaScript that outperforms all known
+          alternatives in both compressed code size and runtime speed. It has
+          been downloaded {">"}23 million times on npm and is used by companies
+          including Google, Mistral AI, and the Las Vegas Sphere.
+        </Item>
+        <Item
+          title="ByteofDev"
+          href="https://byteofdev.com"
+          startTime={new Date("2021-08-01T04:00:00.000Z")}
+        >
+          I run a data systems and web development blog that has been read by {
+            ">"
+          }300,000 developers and has been featured by leading software
+          publications and voices like <a
+            href="https://www.youtube.com/watch?v=EeGCxH_0zx4">ThePrimeagen</a
+          > and <a href="https://tldr.tech/webdev/2025-07-28">TLDR Web Dev</a>.
+        </Item>
+        <Item
+          title="JavaScripters"
+          href="https://discord.gg/fjnjMNdMEw"
+          startTime={new Date("2020-11-01T04:00:00.000Z")}
+        >
+          I manage JavaScripters, a JavaScript Discord group with {">"}20k
+          members, and I am leading a team developing new software to ease the
+          management of JavaScripters.
+        </Item>
+      </ItemGroup>
+      <h2 class="text-4xl">Want to work together?</h2>
+      <p>
+        Feel free to contact me by my email <a
+          href="mailto:jej.jackson.08@gmail.com">jej.jackson.08@gmail.com</a
+        >
+      </p>
+    </div>
+  </body>
+</html>
+<script>
+  import sal from "sal.js";
+  sal();
+</script>
