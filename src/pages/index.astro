@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import Me from "../images/me.jpg";
 import Item from "../components/Item.astro";
 import ItemGroup from "../components/ItemGroup.astro";
 import "../styles/global.css";
@@ -14,19 +16,14 @@ import "sal.js/dist/sal.css";
       href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <meta name="generator" content={Astro.generator} />
     <title>Jacob Jackson</title>
   </head>
   <body>
-    <div class="w-full lg:mx-auto max-w-3xl lg:mt-32 prose mb-32">
-      <div class="flex gap-3 not-prose">
-        <img
-          src="/images/me.jpg"
-          alt="Me :)"
-          class="h-24 aspect-square rounded-md"
-        />
+    <div class="px-3 lg:mx-auto max-w-3xl mt-8 lg:mt-32 prose mb-32">
+      <div class="md:flex gap-3 not-prose">
+        <Image src={Me} alt="Me :)" class="rounded-md" width="96" height="96" />
         <div class="">
-          <h1 class="text-5xl font-medium flex mb-0">
+          <h1 class="text-5xl font-medium mb-0 text-balance">
             Hi, I'm&nbsp;<span
               class="decoration-wavy underline decoration-orange-500"
               >Jacob Jackson</span
@@ -36,14 +33,14 @@ import "sal.js/dist/sal.css";
             <a
               href="https://github.com/AsyncBanana"
               class="text-gray-400 hover:text-gray-500 duration-100"
-              ><span class="i-cib-github w-6 h-6"></span></a
+              aria-label="Github"><span class="i-cib-github w-6 h-6"></span></a
             >
             <a
               href="https://www.linkedin.com/in/jacob-jackson-7b7985255/"
               class="text-gray-400 hover:text-gray-500 duration-100"
+              aria-label="LinkedIn"
               ><span class="i-cib-linkedin w-6 h-6"></span></a
             >
-            <a href=""></a>
           </div>
         </div>
       </div>
@@ -116,14 +113,40 @@ import "sal.js/dist/sal.css";
       </ItemGroup>
       <h2 class="text-4xl">Want to work together?</h2>
       <p>
-        Feel free to contact me by my email <a
+        Interested in working with me on a database, technical writing, or other
+        software project? Feel free to contact me by my email <a
           href="mailto:jej.jackson.08@gmail.com">jej.jackson.08@gmail.com</a
         >
       </p>
     </div>
+    <div class="w-full bg-slate-100">
+      <div class="px-3 py-12 lg:mx-auto max-w-3xl m-auto">
+        <div
+          class="text-xl font-bold text-gray-700 decoration-wavy underline decoration-orange-500"
+        >
+          Jacob Jackson
+        </div>
+        <div class="text-gray-700">
+          ©2025 Jacob Jackson<br />All rights reversed
+        </div>
+        <div class="flex gap-2">
+          <a
+            href="https://github.com/AsyncBanana"
+            class="text-gray-400 hover:text-gray-500 duration-100"
+            aria-label="Github"><span class="i-cib-github w-6 h-6"></span></a
+          >
+          <a
+            href="https://www.linkedin.com/in/jacob-jackson-7b7985255/"
+            class="text-gray-400 hover:text-gray-500 duration-100"
+            aria-label="LinkedIn"
+            ><span class="i-cib-linkedin w-6 h-6"></span></a
+          >
+        </div>
+      </div>
+    </div>
   </body>
+  <script>
+    import sal from "sal.js";
+    sal();
+  </script>
 </html>
-<script>
-  import sal from "sal.js";
-  sal();
-</script>
